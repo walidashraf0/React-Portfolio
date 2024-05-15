@@ -1,0 +1,62 @@
+.hero {
+    margin-top: 3rem;
+}
+
+.left {
+    flex-grow: 1;
+}
+
+.avatar {
+    width: 88px;
+    padding: 2px;
+    margin-right: 0.6rem;
+    border: 1px solid var(--bg-header);
+    box-shadow: 2px 2px 40px rgba(128, 128, 128, 0.409) inset;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.parent {
+    position: relative;
+}
+
+.parent i {
+    color: var(--blue);
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    position: absolute;
+    bottom: 0;
+}
+
+.title {
+    font-size: 2.85rem;
+    line-height: 3.3rem;
+    margin: 24px 0;
+    color: var(--title-color);
+}
+
+.subtitle {
+    color: var(--subtitle-color);
+    font-size: 0.9rem;
+    line-height: 1.7rem;
+    margin-bottom: 32px;
+}
+
+.icons i {
+    font-size: 1.3rem;
+    color: var(--subtitle-color);
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.icons i:hover {
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: var(--icon-hover);
+}
