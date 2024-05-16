@@ -90,13 +90,15 @@ header button.menu {
 /* Model PopUp */
 header .fixed {
     position: fixed;
-    /* top: 0;
+    /*top: 0;
     bottom: 0;
     right: 0;
-    left: 0; */
-    inset: 0;
+    left: 0;
+    */inset: 0;
     z-index: 10;
     background-color: rgba(40, 40, 48, 0.91);
+    border: 2px solid red;
+    backdrop-filter: blur(4px);
 }
 
 header .fixed ul.model {
