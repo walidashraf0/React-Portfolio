@@ -12,7 +12,7 @@ function App() {
       <Header />
       {/* <div className="divider" /> */}
       <Hero />
-      <div className="divider" />
+      {/* <div className="divider" /> */}
       <Main />
       <div className="divider" />
       <Contact />
