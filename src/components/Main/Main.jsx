@@ -1,21 +1,79 @@
+import { useState } from "react";
 import "./Main.css";
 
+
 export default function Main() {
+
+  const [currentActive, setCurrentActive] = useState("all")
+  const myProjects = [
+    {projectTitle: "CSS project", category: "css", imgPath: "/images/1.jpg"},
+    {projectTitle: "CSS project", category: "css", imgPath: "/images/2.jpg"},
+    {projectTitle: "Java project", category: "java", imgPath: "/images/3.jpg"},
+    {projectTitle: "Java project", category: "java", imgPath: "/images/4.jpg"},
+    {projectTitle: "React project", category: "react", imgPath: "/images/5.jpg"},
+    {projectTitle: "React project", category: "react", imgPath: "/images/6.jpg"},
+  ]
+
+  const [array, setArray] = useState(myProjects)
+
+  
   return (
     <main className="d-flex">
       <div className="left-section d-flex">
-        <button className="btn active">All Projects</button>
-        <button className="btn">HTML & CSS</button>
-        <button className="btn">JavaScript</button>
-        <button className="btn">React & MUI</button>
-        <button className="btn">Node % Express</button>
+      <button onClick={()=> {
+          setCurrentActive("all");
+          setArray(myProjects)
+        }} className={currentActive === "all"? "btn active" : 'btn'}>All Projects</button>
+
+        <button onClick={()=> {
+          setCurrentActive("css");
+
+          const newArray = myProjects.filter((item)=> {
+            return item.category === "css";
+          });
+
+          setArray(newArray);
+        }} className={currentActive === "css"? "btn active" : 'btn'}>HTML & CSS</button>
+
+        <button onClick={()=> {
+          setCurrentActive("java");
+
+          const newArray = myProjects.filter((item)=> {
+            return item.category === "java";
+          });
+
+          setArray(newArray);
+        }} className={currentActive === "java"? "btn active" : 'btn'}>JavaScript</button>
+
+        <button onClick={()=> {
+          setCurrentActive("react");
+
+          const newArray = myProjects.filter((item)=> {
+            return item.category === "react";
+          });
+
+          setArray(newArray);
+        }} className={currentActive === "react"? "btn active" : 'btn'}>React & MUI</button>
+
+        <button onClick={()=> {
+          setCurrentActive("node");
+
+          const newArray = myProjects.filter((item)=> {
+            return item.category === "node";
+          });
+
+          setArray(newArray);
+        }} className={currentActive === "node"? "btn active" : 'btn'}>Node % Express</button>
       </div>
+
+
+
       <div className="right-section d-flex">
-        {["aa", "bb", "cc", "dd", "ee", "ff"].map((card, index) => {
+        {array.map((card, index) => {
           return (<div key={index} className="card">
-          <img src="/images/1.jpg" alt="" />
+          <img src={card.imgPath} alt="" />
           <div className="info">
-            <h1 className="title">Landing Page 2</h1>
+            <h1 className="title">{card.projectTitle}</h1>
             <p className="subtitle">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti cum ullam facilis perferendis perspiciatis quas, quia doloremque dicta consequuntur aspernatur.</p>
             <div className="details d-flex justify-content-between">
               <div className="icons">

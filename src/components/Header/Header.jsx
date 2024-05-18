@@ -4,7 +4,7 @@ import './Header.css';
 export default function Header() {
   const [showModel, setShowModel] = useState(false);
   return (
-    <header className='flex'>
+    <header id="header" className='flex'>
       <button className='menu btn' onClick={()=> setShowModel(true)}>
       <i className="menu-bars fa-solid fa-bars"></i>
       </button>
@@ -38,11 +38,6 @@ export default function Header() {
         </ul>
       </div>
       )}
-
-
-
-
-
     </header>
   )
 }
