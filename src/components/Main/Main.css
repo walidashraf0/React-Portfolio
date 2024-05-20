@@ -47,6 +47,8 @@ main .right-section {
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
+    column-gap: 16px;
+    row-gap: 2rem;
 
 }
 
@@ -90,6 +92,7 @@ main .right-section {
 .card .info .title {
     color: var(--title-color);
     font-size: 30px;
+    text-transform: capitalize;
 }
 
 .card .info .subtitle {
