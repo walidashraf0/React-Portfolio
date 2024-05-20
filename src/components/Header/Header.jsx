@@ -1,11 +1,28 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Header.css';
 
 export default function Header() {
+  
+  
   const [showModel, setShowModel] = useState(false);
+  const [theme, setTheme] = useState(localStorage.getItem("currentMode") ?? "dark")
+
+  useEffect(()=> {
+    if (theme === "light") {
+      document.body.classList.remove("dark");
+      document.body.classList.add("light");
+    }
+    else if (theme === "dark") {
+      document.body.classList.remove("light");
+      document.body.classList.add("dark");
+    }
+  }, [theme])
+
+
+
   return (
     <header id="header" className='flex'>
-      <button className='menu btn' onClick={()=> setShowModel(true)}>
+      <button className='menu' onClick={()=> setShowModel(true)}>
       <i className="menu-bars fa-solid fa-bars"></i>
       </button>
 
@@ -19,15 +36,21 @@ export default function Header() {
           <li><a href="">Contact</a></li>
         </ul>
       </nav>
-      <button className='moon btn'>
-      <i className="moon-bar fa-regular fa-moon"></i>
+
+      <button onClick={()=> {
+        // Send theme to local storage 
+        localStorage.setItem("currentMode", theme === "dark"? "light" : "dark")
+        // Get theme from local storage and set this
+        setTheme(localStorage.getItem("currentMode"));
+      }} className='moon'>
+      {theme === "dark"? <i className="moon-bar fa-regular fa-moon"></i> : <i className="sun-bar fa-solid fa-sun"></i>}
       </button>
 
 
       {showModel && (
         <div className="fixed">
         <ul className="model">
-          <li><button className='close btn' onClick={()=> setShowModel(false)}>
+          <li><button className='btn close' onClick={()=> setShowModel(false)}>
           <i className="x-bar fa fa-solid fa-xmark"></i>
             </button></li>
           <li><a href="">About</a></li>

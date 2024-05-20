@@ -13,11 +13,12 @@ main .left-section button {
     color: white;
     width: 14rem;
     padding: 0.7rem 0;
+    font-weight: 500;
     text-align: center;
     font-size: 1.05rem;
     text-transform: capitalize;
     opacity: 0.5;
-    background-color: rgba(36, 37, 46, 1);
+    background-color: rgb(39, 39, 42);
     transition: 0.3s;
     border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -30,8 +31,10 @@ main .left-section button {
     -o-transition: 0.3s;
 }
 
-main .left-section button:hover {
+main .left-section button:hover:not(.active) {
     opacity: 1;
+    color: #000;
+    font-weight: 400;
 }
 
 main .left-section .active {
@@ -39,7 +42,12 @@ main .left-section .active {
     font-weight: bold;
     letter-spacing: 0.6px;
     padding: 0.8rem 0;
+    background-color: #000;
     border: 1px solid var(--blue);
+}
+
+.light main .left-section .active {
+    border: 1px solid #000;
 }
 
 main .right-section {
@@ -57,6 +65,7 @@ main .right-section {
     background-color: var(--bg-secondary);
     border: 1px solid rgba(93, 188, 252, 0.3);
     background-image: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+    box-shadow: -2px 1px 1px rgba(0, 0, 0, 0.2), 2px 1px 1px rgba(0, 0, 0, 0.15);
     transition: 0.3s;
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
@@ -69,10 +78,19 @@ main .right-section {
     -o-border-radius: 5px;
 }
 
+.light .card {
+    border: none;
+}
+
 .card:hover {
+    background-color: rgb(246, 246, 246);
     border: 1px solid var(--blue);
     rotate: 1deg;
     scale: 1.02;
+}
+
+.light .card:hover {
+    border: none;
 }
 
 .card img {

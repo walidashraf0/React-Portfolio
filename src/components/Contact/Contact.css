@@ -15,7 +15,7 @@
     font-size: 40px;
     font-weight: bold;
     margin-bottom: 1.5rem;
-    color: white;
+    color: var(--title-color);
 }
 
 .contact-us p {
@@ -51,7 +51,7 @@
 .form-group input,
 .form-group textarea {
     /*width: 340px;*/
-    color: white;
+    color: var(--title-color);
     padding: 0.75rem;
     border: 1px solid var(--border-color);
     background-color: var(--bg-header);
@@ -81,9 +81,10 @@
     padding: 0.68rem;
     margin-left: 117px;
     margin-top: 25px;
-    background-color: var(--bg-header);
-    border-color: rgb(63, 63, 70);
-    color: #fff;
+    background-color: var(--bg-primary);
+    border-color: var(--blue);
+    font-weight: bold;
+    color: var(--title-color);
     border-radius: 4px;
     font-size: 1rem;
     cursor: pointer;
@@ -92,6 +93,8 @@
 
 .btn.submit-btn:hover {
     scale: 0.99;
+    border: none;
+    color: var(--bg-primary);
     background-color: #0056b3;
 }
 
