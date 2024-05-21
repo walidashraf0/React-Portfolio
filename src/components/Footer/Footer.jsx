@@ -18,7 +18,7 @@ export default function Footer() {
             <a href="/users">Users</a>
           </li>
         </ul>
-        <p>&copy; 2023 WEGO. All rights reserved.</p>
+        <p>&copy; 2024 WEGO. All rights reserved.</p>
       </div>
     </footer>
   );

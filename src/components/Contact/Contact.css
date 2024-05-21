@@ -91,17 +91,31 @@
     transition: background-color 0.3s ease;
 }
 
-.btn.submit-btn:hover {
+.submit-btn:hover {
     scale: 0.99;
     border: none;
-    color: var(--bg-primary);
     background-color: #0056b3;
+}
+
+.submit-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.light .btn.submit-btn:hover {
+    color: var(--bg-primary);
 }
 
 .contact-us .animation {
     flex-grow: 1;
     align-items: center;
     justify-content: center;
+}
+
+@media (max-width: 1250px) {
+    .contactanimation {
+        display: none;
+    }
 }
 
 @media (max-width: 750px) {

@@ -60,3 +60,15 @@
     cursor: pointer;
     color: var(--icon-hover);
 }
+
+.animation {
+    width: 60%;
+    translate: 60px 55px;
+}
+
+
+@media (max-width: 1250px) {
+    .heroanimation {
+        display: none;
+    }
+}
