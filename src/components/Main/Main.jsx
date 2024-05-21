@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { myProjects } from "./MyProjectsData";
 import "./Main.css";
-
-
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Main() {
 
@@ -51,8 +50,14 @@ export default function Main() {
 
 
       <div className="right-section d-flex">
+      <AnimatePresence>
         {array.map((card, index) => {
-          return (<div key={index} className="card">
+          return (<motion.div
+          layout
+          initial={{ transform: "scale(0)" }}
+          animate={{ transform: "scale(1)" }}
+          transition={{ type: "spring", damping: 8, stiffness: 50 }}
+          key={index} className="card">
           <img src={card.imgPath} alt="" />
           <div className="info">
             <h1 className="title">{card.projectTitle}</h1>
@@ -72,8 +77,9 @@ export default function Main() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
         )})}
+      </AnimatePresence>
       </div>
     </main>
   );

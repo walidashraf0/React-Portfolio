@@ -1,7 +1,8 @@
 import Lottie from "lottie-react";
 import heroAnimation from "../../animation/hero.json";
-import './Hero.css';
 import { useRef } from "react";
+import { motion } from "framer-motion";
+import './Hero.css';
 
 export default function Hero() {
   const lottiRef = useRef();
@@ -9,11 +10,21 @@ export default function Hero() {
     <section className='hero flex'>
       <div className="left-sec">
         <div className="parent">
-          <img className='avatar' src='/images/me-modified.png' alt="" />
+          <motion.img
+          initial={{transform: "scale(0)"}}
+          animate={{transform: "scale(1.1)"}}
+          transition={{damping: 6, type: "spring", stiffness: 100}}
+          className='avatar' src='/images/me-modified.png' alt="" />
           <i className="fa-solid fa-certificate"></i>
         </div>
         <div className="info">
-          <h1 className='title'>Frontend Developer, Web Designer.</h1>
+
+          <motion.h1
+          initial={{opacity: 0}}
+          animate={{opacity: 1}}
+          transition={{duration: 2}}
+          className='title'>Frontend Developer, Web Designer.</motion.h1>
+
           <p className='subtitle'>I am Walid Ashraf. I am 21 years old. I was born on 11/20/2002. I study at
             the Faculty of Computers and Information at Zagazig University. I work as a
             Frontend Developer. I have many personal skills such as teamwork, time
